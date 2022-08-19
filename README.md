@@ -21,3 +21,5 @@ Through our project a user who is a software developer can get an idea of his sa
 the country he resides in, education and years of experience in the professional field.
 Apart from that the user will also be able to see mean salary based on country, 
 experience and compare salaries between different countries.
+
+Web Application is live at : https://sdesalarypredictor.herokuapp.com/
