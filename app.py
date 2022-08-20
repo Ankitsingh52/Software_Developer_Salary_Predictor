@@ -44,7 +44,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 #Feedbacks
 with st.container():
     st.write("---")
-    st.write("""## Get In Touch With Me For Feebacks/Suggestions !""")
+    st.write("""## Get In Touch With Me For Feedbacks/Suggestions !""")
     st.write("##")
 
     contact_form = """
