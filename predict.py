@@ -39,7 +39,7 @@ def show_predict_page():
         "Less than a Bachelors",
         "Bachelor’s degree",
         "Master’s degree",
-        "Post grad",
+        
     )
 
     country = st.selectbox("Country", countries)
@@ -56,3 +56,38 @@ def show_predict_page():
 
         salary = regressor.predict(X)
         st.subheader(f"The estimated salary is ${salary[0]:.2f}")
+        if country == 'India':
+            salary = salary * 81.98;
+            st.subheader(f"The estimated salary in INR is ₹{salary[0]:.2f}")
+        elif country == 'United Kingdom':
+            salary = salary * 0.88;
+            st.subheader(f"The estimated salary in GBP is £{salary[0]:.2f}")
+        elif country == 'Germany' or country == 'France' or country == 'Spain' or country == 'Italy' or country == 'Netherlands':
+            salary = salary * 1.00;
+            st.subheader(f"The estimated salary in EUR is €{salary[0]:.2f}")
+        elif country == 'Canada':
+            salary = salary * 1.35;
+            st.subheader(f"The estimated salary in CAD is ${salary[0]:.2f}")
+        elif country == 'Brazil':
+            salary = salary * 5.04;
+            st.subheader(f"The estimated salary in BRL is R${salary[0]:.2f}")
+        elif country == 'Sweden':
+            salary = salary * 11.01;
+            st.subheader(f"The estimated salary in SEK is {salary[0]:.2f} kr")
+        elif country == 'Australia':
+            salary = salary * 1.55;
+            st.subheader(f"The estimated salary in AUD is ${salary[0]:.2f}")
+        elif country == 'Poland':
+            salary = salary * 4.71;
+            st.subheader(f"The estimated salary in PLN is zł{salary[0]:.2f}")
+        elif country == 'Russian Federation':
+            salary = salary * 62.00;
+            st.subheader(f"The estimated salary in RUB is ₽{salary[0]:.2f}")
+        
+        
+        
+        
+
+
+
+
