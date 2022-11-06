@@ -7,6 +7,7 @@ from predict import show_predict_page
 from explore import show_explore_page
 
 #background img/gif
+
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -25,6 +26,7 @@ def add_bg_from_local(image_file):
 add_bg_from_local('SDE.gif')
 
 page = st.sidebar.selectbox("Do You Want To Explore Or Predict ?", ("Predict", "Explore"))
+
 
 if page == "Predict":
     show_predict_page()
@@ -56,7 +58,7 @@ with st.container():
     </form>
     <br>
     <body>
-     <center><p>Made with ❤️ by Ankit Singh & Co. </p><center>
+     <center><p>Made with ❤️</p></center>
     </body>
     <center><a href="https://www.linkedin.com/in/ankit-singh-4b787a207">Connect With Me</a></center>
     <br>
