@@ -23,3 +23,6 @@ Apart from that the user will also be able to see mean salary based on country,
 experience and compare salaries between different countries.
 
 Web Application is live at : https://sdesalarypredictor.herokuapp.com/
+
+<img width="1440" alt="Screenshot 2022-11-08 at 9 24 11 PM" src="https://user-images.githubusercontent.com/89691977/200616501-9cfc132c-c552-4e90-b883-4a34984ff7d9.png">
+
