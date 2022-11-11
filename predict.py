@@ -12,7 +12,7 @@ data = load_model()
 regressor = data["model"]
 le_country = data["le_country"]
 le_education = data["le_education"]
-
+c_salary = 20431.56
 def show_predict_page():
     st.title("Software Developer Salary Prediction")
 
@@ -55,10 +55,18 @@ def show_predict_page():
         X = X.astype(float)
 
         salary = regressor.predict(X)
-        st.subheader(f"The estimated salary is ${salary[0]:.2f}")
+        if country == 'India' and experience < 3 and education != "Master’s degree":
+            salary = c_salary
+            st.subheader(f"The estimated salary is ${salary:.2f}")
+        else:
+            st.subheader(f"The estimated salary is ${salary[0]:.2f}")
+        #st.subheader(f"The estimated salary is ${salary[0]:.2f}")
         if country == 'India':
             salary = salary * 81.98;
-            st.subheader(f"The estimated salary in INR is ₹{salary[0]:.2f}")
+            if experience < 3 and education != "Master’s degree":
+                st.subheader(f"The estimated salary in INR is ₹{salary:.2f}")
+            else:
+                st.subheader(f"The estimated salary in INR is ₹{salary[0]:.2f}")
         elif country == 'United Kingdom':
             salary = salary * 0.88;
             st.subheader(f"The estimated salary in GBP is £{salary[0]:.2f}")
@@ -83,11 +91,3 @@ def show_predict_page():
         elif country == 'Russian Federation':
             salary = salary * 62.00;
             st.subheader(f"The estimated salary in RUB is ₽{salary[0]:.2f}")
-        
-        
-        
-        
-
-
-
-
