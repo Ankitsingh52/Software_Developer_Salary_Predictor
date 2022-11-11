@@ -1,6 +1,10 @@
 import streamlit as st
 s = "Salary Predictor"
 st.set_page_config(page_title=s,page_icon="icon2.jpeg")
+import sys
+
+sys.path.insert(1, "/Users/ankit/opt/anaconda3/envs/ml/lib/python3.9/site-packages/streamlit_option_menu")
+from streamlit_option_menu import option_menu
 
 import base64
 from predict import show_predict_page
@@ -23,12 +27,18 @@ def add_bg_from_local(image_file):
     unsafe_allow_html=True
     )
 
-add_bg_from_local('SDE.gif')
+add_bg_from_local('SDE5.jpeg')
 
-page = st.sidebar.selectbox("Do You Want To Explore Or Predict ?", ("Predict", "Explore"))
+selected = option_menu(
+        menu_title = "Main Menu",
+        options = ["Predict","Explore"],
+        icons = ["lightbulb-fill","book"],
+        menu_icon = "cast",
+        default_index = 0,
+        orientation = "horizontal",
+)
 
-
-if page == "Predict":
+if selected == "Predict":
     show_predict_page()
 else:
     show_explore_page()
