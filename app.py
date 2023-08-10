@@ -3,8 +3,7 @@ s = "Salary Predictor"
 st.set_page_config(page_title=s, page_icon="icon2.jpeg")
 import sys
 
-sys.path.insert(1, "/Users/ankit/opt/anaconda3/envs/ml/lib/python3.9/site-packages/streamlit_option_menu")
-from streamlit_option_menu import option_menu
+
 
 import base64
 from predict import show_predict_page
